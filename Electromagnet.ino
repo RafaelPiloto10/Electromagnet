@@ -33,3 +33,4 @@ void magnetOff(){
 	digitalWrite(in3, LOW);
 	digitalWrite(in4, LOW);
 }
+
