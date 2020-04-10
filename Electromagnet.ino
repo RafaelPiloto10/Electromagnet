@@ -1,4 +1,4 @@
-// Motor A connections
+// Magnetconnections
 int enA = 9;
 int in1 = 8;
 int in2 = 7;
