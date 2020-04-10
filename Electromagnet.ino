@@ -23,8 +23,6 @@ void magnetOn(){
 
 	digitalWrite(in1, HIGH);
 	digitalWrite(in2, LOW);
-	
-	delay(2000);
 }
 
 void magnetOff(){
