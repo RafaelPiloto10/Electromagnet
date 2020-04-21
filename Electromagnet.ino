@@ -11,7 +11,7 @@ void setup() {
 	pinMode(enA, OUTPUT);
 	pinMode(in1, OUTPUT);
 	pinMode(in2, OUTPUT);
-	pinMode(13, OUTPUT);
+	pinMode(LED_BUILTIN, OUTPUT);
 
 	pinMode(buttonPin, INPUT);
 	
@@ -22,11 +22,11 @@ void setup() {
 
 void loop() {
 	magnetOn();
-	digitalWrite(13, HIGH);
-	delay(5);
+	digitalWrite(LED_BUILTIN, HIGH);
+	delay(2000);
 	magnetOff();
-	digitalWrite(13, LOW);
-	delay(5);
+	digitalWrite(LED_BUILTIN, LOW);
+	delay(2000);
 }
 
 void magnetOn(){
