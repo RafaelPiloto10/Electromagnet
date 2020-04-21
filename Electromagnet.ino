@@ -4,7 +4,8 @@ int in1 = 8;
 int in2 = 7;
 
 
-int buttonPin = 2;	
+int buttonPin = 2;
+float strength = .8;
 
 void setup() {
 	Serial.begin(9600);
@@ -30,7 +31,7 @@ void loop() {
 }
 
 void magnetOn(){
-	analogWrite(enA, 255);
+	analogWrite(enA, round(255 * strength));
 
 	digitalWrite(in1, HIGH);
 	digitalWrite(in2, LOW);
