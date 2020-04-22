@@ -32,7 +32,6 @@ void loop() {
 			magnetState = false;
 		}
 	} else {
-		Serial.println("No data to read");
 	}
 
 	if(magnetState){
