@@ -9,7 +9,7 @@ OFF = '0'
 if __name__ == "__main__":
 	arduino = serial.Serial(PORT, BAUDRATE)
 	if arduino.is_open:
-		while true:
+		while True:
 			state = int(input("Enter the state of the magnet (0 - off, 1 - on) or 69 to turn it off: "))
 			if state == 69:
 				arduino.close()
