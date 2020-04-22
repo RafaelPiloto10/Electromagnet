@@ -14,7 +14,7 @@ if __name__ == "__main__":
 			state = int(input("Enter the state of the magnet (0 - off, 1 - on) or 69 to turn it off: "))
 			if state == 69:
 				arduino.close()
-				return
+				break
 			else:
 				if state:
 					arduino.write(str.encode(ON))
