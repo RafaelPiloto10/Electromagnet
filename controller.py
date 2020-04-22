@@ -1,13 +1,13 @@
 import serial
 
-PORT = "/dev/cu.usbmodem14101 (Arduino)"
+PORT = '/dev/cu.usbmodem14101'
 BAUDRATE = 9600	
 
 ON = '1'
 OFF = '0'
 
 if __name__ == "__main__":
-	arduino = serial.Serial(PORT, BAUDRATE)
+	arduino = serial.Serial(PORT, BAUDRATE, timeout=0, parity=serial.PARITY_EVEN, rtscts=1)
 	arduino.open()
 	if arduino.is_open:
 		while true:
