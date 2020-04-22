@@ -3,8 +3,8 @@ import serial
 PORT = "/dev/cu.usbmodem14101"
 BAUDRATE = 9600	
 
-ON = 1
-OFF = 0
+ON = '1'
+OFF = '0'
 
 if __name__ == "__main__":
 	arduino = serial.Serial(PORT, BAUDRATE)
@@ -17,8 +17,8 @@ if __name__ == "__main__":
 				return
 			else:
 				if state:
-					arduino.write((ON).to_bytes(2, byteorder='big'))
+					arduino.write(str.encode(ON))
 				else:
-					arduino.write((OFF).to_bytes(2, byteorder='big'))
+					arduino.write(str.encode(OFF))
 	else:
 		print("ERROR: Could not connect to port: " + PORT)

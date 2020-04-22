@@ -6,6 +6,10 @@ int in2 = 7;
 
 int buttonPin = 2;
 float strength = .8;
+bool magnetState = false;
+
+int timeON = 2000;
+int timeOFF = 2000;
 
 void setup() {
 	Serial.begin(9600);
@@ -22,25 +26,37 @@ void setup() {
 }
 
 void loop() {
-	magnetOn();
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(2000);
-	magnetOff();
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(2000);
+	if(Serial.available() > 0){
+		int command = Serial.read() - '0';
+		if(command == 1){
+			magnetState = true;
+		} else if(command == 0){
+			magnetState = false;
+		}
+	} else {
+		Serial.println("No data to read");
+	}
+
+	if(magnetState){
+		magnetOn();
+	} else {
+		magnetOff();
+	}
 }
 
 void magnetOn(){
 	analogWrite(enA, round(255 * strength));
-
+	magnetState = true;
 	digitalWrite(in1, HIGH);
 	digitalWrite(in2, LOW);
-}
+	digitalWrite(LED_BUILTIN, HIGH);
+}	
 
 void magnetOff(){
 	analogWrite(enA, 0);
-
+	magnetState = false;
 	digitalWrite(in1, LOW);
 	digitalWrite(in2, LOW);
+	digitalWrite(LED, LOW);
 }
 
