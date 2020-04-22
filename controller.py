@@ -1,6 +1,6 @@
 import serial
 
-PORT = "/dev/cu.usbmodem14101"
+PORT = "/dev/cu.usbmodem14101 (Arduino)"
 BAUDRATE = 9600	
 
 ON = '1'
