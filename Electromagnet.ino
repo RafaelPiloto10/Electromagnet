@@ -4,7 +4,7 @@ int in1 = 8;
 int in2 = 7;
 
 
-float strength = .8;
+float strength = 1;
 bool magnetState = false;
 
 int timeON = 2000;
