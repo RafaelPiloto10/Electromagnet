@@ -4,7 +4,6 @@ int in1 = 8;
 int in2 = 7;
 
 
-int buttonPin = 2;
 float strength = .8;
 bool magnetState = false;
 
@@ -18,7 +17,6 @@ void setup() {
 	pinMode(in2, OUTPUT);
 	pinMode(LED_BUILTIN, OUTPUT);
 
-	pinMode(buttonPin, INPUT);
 	
 	// Turn off  - Initial state
 	digitalWrite(in1, LOW);
@@ -57,6 +55,6 @@ void magnetOff(){
 	magnetState = false;
 	digitalWrite(in1, LOW);
 	digitalWrite(in2, LOW);
-	digitalWrite(LED, LOW);
+	digitalWrite(LED_BUILTIN, LOW);
 }
 
